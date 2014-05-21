@@ -36,7 +36,7 @@ public:
     /** Qt messes up the tab chain by default in some cases (issue https://bugreports.qt-project.org/browse/QTBUG-10907),
         in these cases we have to set it up manually.
     */
-    QWidget *setupTabChain(QWidget *prev);
+    QWidget *setupTYARhain(QWidget *prev);
 
 signals:
     void textChanged();

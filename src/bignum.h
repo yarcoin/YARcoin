@@ -377,7 +377,7 @@ public:
                 throw bignum_error("CBigNum::ToString() : BN_div failed");
             bn = dv;
             unsigned int c = rem.getulong();
-            str += "0123456789abcdef"[c];
+            str += "0123456789YARdef"[c];
         }
         if (BN_is_negative(this))
             str += "-";

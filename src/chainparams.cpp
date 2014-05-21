@@ -23,19 +23,19 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         // The message start string is designed to be unlikely to occur in normal data.
-        pchMessageStart[0] = 0x04;
-        pchMessageStart[1] = 0x04;
-        pchMessageStart[2] = 0x04;
-        pchMessageStart[3] = 0x04;
-        nDefaultPort = 5530;
-        nRPCPort = 5531;
+        pchMessageStart[0] = 0x05;
+        pchMessageStart[1] = 0x07;
+        pchMessageStart[2] = 0x09;
+        pchMessageStart[3] = 0x03;
+        nDefaultPort = 62891;
+        nRPCPort = 62892;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
         nSubsidyHalvingInterval = 100000;
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
         // be spent as it did not originally exist in the database.
   
-        const char* pszTimestamp = "ABCCoin";
+        const char* pszTimestamp = "YARcoin";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -46,16 +46,16 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1300000000;
+        genesis.nTime    = 1400665091;
         genesis.nBits    = 0x1e0fffff;
-        genesis.nNonce   = 0;
+        genesis.nNonce   = 1091475;
         
         //// debug print
         hashGenesisBlock = genesis.GetHash();
-        //while (hashGenesisBlock > bnProofOfWorkLimit.getuint256()){
-        //    if (++genesis.nNonce==0) break;
-        //    hashGenesisBlock = genesis.GetHash();
-        //}
+        while (hashGenesisBlock > bnProofOfWorkLimit.getuint256()){
+            if (++genesis.nNonce==0) break;
+            hashGenesisBlock = genesis.GetHash();
+        }
 
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
@@ -63,8 +63,8 @@ public:
         genesis.print();
         
         
-        assert(hashGenesisBlock == uint256("0x"));
-        assert(genesis.hashMerkleRoot == uint256("0x"));
+        assert(hashGenesisBlock == uint256("0x0000058d2ca3cf48d254449629c444672adccd53b66a5fdf38435ac70d35eb4e"));
+        assert(genesis.hashMerkleRoot == uint256("0x81dd0593f39ed3409ce119e924dfee18d6c17d24ce5969577d2342e72902d299"));
 
         vSeeds.push_back(CDNSSeedData("someaddress.com or IP addy", "someaddress.com"));
 
@@ -134,7 +134,7 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        // vSeeds.push_back(CDNSSeedData("abccoin.test", "test.abccoin.org"));
+        // vSeeds.push_back(CDNSSeedData("YARcoin.test", "test.YARcoin.org"));
 
         base58Prefixes[PUBKEY_ADDRESS] = 130;
         base58Prefixes[SCRIPT_ADDRESS] = 30;

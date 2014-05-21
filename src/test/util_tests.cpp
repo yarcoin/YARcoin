@@ -164,10 +164,10 @@ BOOST_AUTO_TEST_CASE(util_WildcardMatch)
 {
     BOOST_CHECK(WildcardMatch("127.0.0.1", "*"));
     BOOST_CHECK(WildcardMatch("127.0.0.1", "127.*"));
-    BOOST_CHECK(WildcardMatch("abcdef", "a?cde?"));
-    BOOST_CHECK(!WildcardMatch("abcdef", "a?cde??"));
-    BOOST_CHECK(WildcardMatch("abcdef", "a*f"));
-    BOOST_CHECK(!WildcardMatch("abcdef", "a*x"));
+    BOOST_CHECK(WildcardMatch("YARdef", "a?cde?"));
+    BOOST_CHECK(!WildcardMatch("YARdef", "a?cde??"));
+    BOOST_CHECK(WildcardMatch("YARdef", "a*f"));
+    BOOST_CHECK(!WildcardMatch("YARdef", "a*x"));
     BOOST_CHECK(WildcardMatch("", "*"));
 }
 

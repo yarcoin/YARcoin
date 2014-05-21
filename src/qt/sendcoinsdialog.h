@@ -27,7 +27,7 @@ public:
 
     /** Set up the tab chain manually, as Qt messes up the tab chain by default in some cases (issue https://bugreports.qt-project.org/browse/QTBUG-10907).
      */
-    QWidget *setupTabChain(QWidget *prev);
+    QWidget *setupTYARhain(QWidget *prev);
 
     void setAddress(const QString &address);
     void pasteEntry(const SendCoinsRecipient &rv);

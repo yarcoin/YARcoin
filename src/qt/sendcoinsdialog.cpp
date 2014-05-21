@@ -225,7 +225,7 @@ void SendCoinsDialog::updateRemoveEnabled()
             entry->setRemoveEnabled(enabled);
         }
     }
-    setupTabChain(0);
+    setupTYARhain(0);
 }
 
 void SendCoinsDialog::removeEntry(SendCoinsEntry* entry)
@@ -234,14 +234,14 @@ void SendCoinsDialog::removeEntry(SendCoinsEntry* entry)
     updateRemoveEnabled();
 }
 
-QWidget *SendCoinsDialog::setupTabChain(QWidget *prev)
+QWidget *SendCoinsDialog::setupTYARhain(QWidget *prev)
 {
     for(int i = 0; i < ui->entries->count(); ++i)
     {
         SendCoinsEntry *entry = qobject_cast<SendCoinsEntry*>(ui->entries->itemAt(i)->widget());
         if(entry)
         {
-            prev = entry->setupTabChain(prev);
+            prev = entry->setupTYARhain(prev);
         }
     }
     QWidget::setTabOrder(prev, ui->addButton);
